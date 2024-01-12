@@ -1,11 +1,15 @@
 import cors from "cors";
 import express from "express";
+import userRouter from "./routes/user.routes.js";
+import walletRouter from "./routes/wallet.routes.js";
 // import { MongoClient } from "mongodb"
 // import dotenv from "dotenv"
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(userRouter)
+app.use(walletRouter)
 
 // dotenv.config()
 
