@@ -17,9 +17,12 @@ export async function inputWallet(req, res, next) {
 }
 
 export async function visualWallet(req, res, next) {
+    const {token, userId} = res.locals
 
     try {
+        const wallet = (await db.collection("wallet").find({ userId }).sort({ date: -1}).toArray());
         
+        res.send(wallet)
     } catch (error) {
         res.status(500).send(error.message);
     }
