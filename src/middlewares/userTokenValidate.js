@@ -11,6 +11,7 @@ export async function userTokenValidate (req, res, next) {
         if (!session) return res.status(404).send({message: "invalid token"})
         
         res.locals.token = token
+        res.locals.userId = session.userId
 
         next()
 
