@@ -8,8 +8,8 @@ import walletRouter from "./routes/wallet.routes.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(userRouter)
-app.use(walletRouter)
+app.use(userRouter);
+app.use(walletRouter);
 
 // dotenv.config()
 
@@ -21,6 +21,5 @@ app.use(walletRouter)
 //     console.log(err.message)
 // }
 
-const PORT = 5000
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`))
-
+const PORT = 5000;
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
